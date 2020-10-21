@@ -8,6 +8,7 @@ scoreboard objectives add spider minecraft.killed:spider
 scoreboard objectives add cave_spider minecraft.killed:cave_spider
 
 scoreboard players set $game mobrace 0
+scoreboard objectives setdisplay sidebar
 schedule clear mobrace:stop
 
 function mobrace:loop
