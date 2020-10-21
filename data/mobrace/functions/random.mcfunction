@@ -1,7 +1,7 @@
 scoreboard objectives add random dummy
 
 # Makes sure the max variable has a value (default: generate a number between 1 and 2)
-execute unless score $max random matches 2.. run scoreboard players set $max random 2
+execute unless score $max random matches 1.. run scoreboard players set $max random 2
 
 execute store result score $rnd1 random run data get entity @e[sort=random,limit=1] Pos[0]
 execute store result score $rnd2 random run data get entity @e[sort=random,limit=1] Pos[1]

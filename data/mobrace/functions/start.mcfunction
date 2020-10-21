@@ -6,17 +6,24 @@ scoreboard players set $max random 2
 function mobrace:random
 scoreboard players operation $game mobrace = $random random
 
-# Setup game 1
-execute if score $game mobrace matches 1 run say Kill as many zombies as you can in the next 5 minutes
+# Setup game all
+title @a times 20 60 20
+execute as @a at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 1 .5
+execute as @a at @s run playsound minecraft:block.conduit.ambient master @s ~ ~ ~ 1 .5
+
+# Setup game 1 - Zombies
 execute if score $game mobrace matches 1 run scoreboard players reset * zombie
 execute if score $game mobrace matches 1 run scoreboard players reset * zombie_villager
 execute if score $game mobrace matches 1 run scoreboard objectives modify score displayname {"text":"Zombie Slayer","color":"aqua"}
+title @a subtitle {"text":"Kill as much zombies as you can in 5 minutes","color":"gray"}
+title @a title {"text":"Zombie Race","bold":true,"color":"aqua"}
 
-# Setup game 2
-execute if score $game mobrace matches 2 run say Kill as many spiders as you can in the next 5 minutes
+# Setup game 2 - Spiders
 execute if score $game mobrace matches 2 run scoreboard players reset * spider
 execute if score $game mobrace matches 2 run scoreboard players reset * cave_spider
 execute if score $game mobrace matches 2 run scoreboard objectives modify score displayname {"text":"Arachnophobe","color":"aqua"}
+title @a subtitle {"text":"Kill as much spiders as you can in 5 minutes","color":"gray"}
+title @a title {"text":"Spider Race","bold":true,"color":"aqua"}
 
 scoreboard objectives setdisplay sidebar score
 schedule function mobrace:stop 300s
