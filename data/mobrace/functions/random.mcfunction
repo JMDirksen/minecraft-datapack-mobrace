@@ -1,5 +1,3 @@
-scoreboard objectives add random dummy
-
 # Makes sure the max variable has a value (default: generate a number between 1 and 2)
 execute unless score $max random matches 1.. run scoreboard players set $max random 2
 

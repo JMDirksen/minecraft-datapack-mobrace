@@ -1,6 +1,7 @@
 scoreboard objectives add mobrace dummy
 scoreboard objectives add score dummy
 scoreboard objectives add winner dummy
+scoreboard objectives add random dummy
 
 scoreboard objectives add zombie minecraft.killed:zombie
 scoreboard objectives add zombie_villager minecraft.killed:zombie_villager
