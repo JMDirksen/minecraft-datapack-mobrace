@@ -25,3 +25,6 @@ scoreboard objectives add wither_skeleton minecraft.killed:wither_skeleton
 
 # Game 4 - Creepers
 scoreboard objectives add creeper minecraft.killed:creeper
+
+# Game 5 - Endermen
+scoreboard objectives add enderman minecraft.killed:enderman

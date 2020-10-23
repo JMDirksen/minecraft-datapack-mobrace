@@ -2,7 +2,7 @@
 scoreboard players reset * score
 
 # Select random game
-scoreboard players set $max random 4
+scoreboard players set $max random 5
 function mobrace:random
 scoreboard players operation $game mobrace = $random random
 
@@ -41,3 +41,9 @@ execute if score $game mobrace matches 4 run scoreboard players reset * creeper
 execute if score $game mobrace matches 4 run scoreboard objectives modify score displayname {"text":"Boom","color":"aqua","bold": true}
 execute if score $game mobrace matches 4 run title @a subtitle {"text":"Who can kill the most creepers tonight?","color":"gray"}
 execute if score $game mobrace matches 4 run title @a title {"text":"Boom!","color":"aqua"}
+
+# Setup game 5 - Endermen
+execute if score $game mobrace matches 5 run scoreboard players reset * enderman
+execute if score $game mobrace matches 5 run scoreboard objectives modify score displayname {"text":"Endermen","color":"aqua","bold": true}
+execute if score $game mobrace matches 5 run title @a subtitle {"text":"Who can kill the most endermen tonight?","color":"gray"}
+execute if score $game mobrace matches 5 run title @a title {"text":"Don't look!","color":"aqua"}

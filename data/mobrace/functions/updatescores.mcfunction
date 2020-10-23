@@ -14,5 +14,9 @@ execute as @a if score $game mobrace matches 3 run scoreboard players operation 
 # Game 4 - Creepers
 execute as @a if score $game mobrace matches 4 run scoreboard players operation @s score = @s creeper
 
+# Game 5 - Endermen
+execute as @a if score $game mobrace matches 5 run scoreboard players operation @s score = @s enderman
+
+
 # Set highscore
 execute as @a if score @s score > $highscore mobrace run scoreboard players operation $highscore mobrace = @s score
