@@ -14,14 +14,14 @@ execute as @a at @s run playsound minecraft:block.conduit.ambient master @s ~ ~ 
 # Setup game 1 - Zombies
 execute if score $game mobrace matches 1 run scoreboard players reset * zombie
 execute if score $game mobrace matches 1 run scoreboard players reset * zombie_villager
-execute if score $game mobrace matches 1 run scoreboard objectives modify score displayname {"text":"Zombie Slayer","color":"aqua"}
+execute if score $game mobrace matches 1 run scoreboard objectives modify score displayname {"text":"Zombie Slayer","color":"aqua","bold": true}
 execute if score $game mobrace matches 1 run title @a subtitle {"text":"Who can kill the most zombies tonight?","color":"gray"}
 execute if score $game mobrace matches 1 run title @a title {"text":"Zombie Slayer!","color":"aqua"}
 
 # Setup game 2 - Spiders
 execute if score $game mobrace matches 2 run scoreboard players reset * spider
 execute if score $game mobrace matches 2 run scoreboard players reset * cave_spider
-execute if score $game mobrace matches 2 run scoreboard objectives modify score displayname {"text":"Arachnophobe","color":"aqua"}
+execute if score $game mobrace matches 2 run scoreboard objectives modify score displayname {"text":"Arachnophobe","color":"aqua","bold": true}
 execute if score $game mobrace matches 2 run title @a subtitle {"text":"Who can kill the most spiders tonight?","color":"gray"}
 execute if score $game mobrace matches 2 run title @a title {"text":"Arachnophobe!","color":"aqua"}
 

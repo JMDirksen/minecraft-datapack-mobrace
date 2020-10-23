@@ -6,7 +6,11 @@ function mobrace:updatescores
 scoreboard players set $highscore mobrace 0
 execute as @a if score @s score > $highscore mobrace run scoreboard players operation $highscore mobrace = @s score
 scoreboard players reset * winner
-execute as @a if score @s score = $highscore mobrace run scoreboard players set @s winner 1
+execute as @a if score $highscore mobrace matches 1.. if score @s score = $highscore mobrace run scoreboard players set @s winner 1
+
+# Count wins
+scoreboard players add @a[scores={winner=1}] wins 1
+schedule function mobrace:showwins 3s
 
 # Stop game
 scoreboard players set $game mobrace 0
