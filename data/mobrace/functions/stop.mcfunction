@@ -1,5 +1,3 @@
-say The race has ended
-
 # Remove offline players scores
 scoreboard players reset * score
 function mobrace:updatescores
@@ -15,5 +13,10 @@ scoreboard players set $game mobrace 0
 schedule clear mobrace:stop
 schedule function mobrace:hidesidebar 30s
 
-# Winner
-tellraw @a ["",{"text":"And the winner is: "},{"selector":"@a[scores={winner=1}]"}]
+# Sound and title
+title @a times 20 100 20
+execute as @a at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 1 .5
+execute as @a at @s run playsound minecraft:block.conduit.ambient master @s ~ ~ ~ 1 .5
+execute if score $highscore mobrace matches 1.. run title @a subtitle ["",{"selector":"@a[scores={winner=1}]"},{"text":" has won this round!"}]
+execute if score $highscore mobrace matches 0 run title @a subtitle {"text":"No winner this round"}
+title @a title {"text":"The race has ended","color":"aqua"}
