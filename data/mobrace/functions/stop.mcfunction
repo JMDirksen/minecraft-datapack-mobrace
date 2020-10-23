@@ -10,7 +10,7 @@ execute as @a if score $highscore mobrace matches 1.. if score @s score = $highs
 
 # Count wins
 scoreboard players add @a[scores={winner=1}] wins 1
-schedule function mobrace:showwins 3s
+schedule function mobrace:showwins 5s
 
 # Stop game
 scoreboard players set $game mobrace 0

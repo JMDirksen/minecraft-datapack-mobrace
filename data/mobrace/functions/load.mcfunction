@@ -18,3 +18,7 @@ scoreboard objectives add zombie_villager minecraft.killed:zombie_villager
 scoreboard objectives add spider minecraft.killed:spider
 scoreboard objectives add cave_spider minecraft.killed:cave_spider
 
+# Game 3 - Skeletons
+scoreboard objectives add skeleton minecraft.killed:skeleton
+scoreboard objectives add skeleton_horse minecraft.killed:skeleton_horse
+scoreboard objectives add wither_skeleton minecraft.killed:wither_skeleton

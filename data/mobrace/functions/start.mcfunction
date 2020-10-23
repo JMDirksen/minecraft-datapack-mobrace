@@ -2,7 +2,7 @@
 scoreboard players reset * score
 
 # Select random game
-scoreboard players set $max random 2
+scoreboard players set $max random 3
 function mobrace:random
 scoreboard players operation $game mobrace = $random random
 
@@ -24,6 +24,14 @@ execute if score $game mobrace matches 2 run scoreboard players reset * cave_spi
 execute if score $game mobrace matches 2 run scoreboard objectives modify score displayname {"text":"Arachnophobe","color":"aqua","bold": true}
 execute if score $game mobrace matches 2 run title @a subtitle {"text":"Who can kill the most spiders tonight?","color":"gray"}
 execute if score $game mobrace matches 2 run title @a title {"text":"Arachnophobe!","color":"aqua"}
+
+# Setup game 3 - Skeletons
+execute if score $game mobrace matches 3 run scoreboard players reset * skeleton
+execute if score $game mobrace matches 3 run scoreboard players reset * skeleton_horse
+execute if score $game mobrace matches 3 run scoreboard players reset * wither_skeleton
+execute if score $game mobrace matches 3 run scoreboard objectives modify score displayname {"text":"Bones","color":"aqua","bold": true}
+execute if score $game mobrace matches 3 run title @a subtitle {"text":"Who can kill the most skeletons tonight?","color":"gray"}
+execute if score $game mobrace matches 3 run title @a title {"text":"Bones!","color":"aqua"}
 
 scoreboard objectives setdisplay sidebar score
 schedule function mobrace:stop 540s
