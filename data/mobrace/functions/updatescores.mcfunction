@@ -10,3 +10,9 @@ execute as @a if score $game mobrace matches 2 run scoreboard players operation 
 execute as @a if score $game mobrace matches 3 run scoreboard players operation @s score = @s skeleton
 execute as @a if score $game mobrace matches 3 run scoreboard players operation @s score += @s skeleton_horse
 execute as @a if score $game mobrace matches 3 run scoreboard players operation @s score += @s wither_skeleton
+
+# Game 4 - Creepers
+execute as @a if score $game mobrace matches 4 run scoreboard players operation @s score = @s creeper
+
+# Set highscore
+execute as @a if score @s score > $highscore mobrace run scoreboard players operation $highscore mobrace = @s score

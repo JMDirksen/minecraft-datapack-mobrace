@@ -2,14 +2,17 @@
 scoreboard players reset * score
 
 # Select random game
-scoreboard players set $max random 3
+scoreboard players set $max random 4
 function mobrace:random
 scoreboard players operation $game mobrace = $random random
 
-# Setup game all
+# Setup game
 title @a times 20 100 20
 execute as @a at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 1 .5
 execute as @a at @s run playsound minecraft:block.conduit.ambient master @s ~ ~ ~ 1 .5
+scoreboard objectives setdisplay sidebar score
+schedule function mobrace:stop 540s
+scoreboard players set $highscore mobrace 0
 
 # Setup game 1 - Zombies
 execute if score $game mobrace matches 1 run scoreboard players reset * zombie
@@ -33,5 +36,8 @@ execute if score $game mobrace matches 3 run scoreboard objectives modify score 
 execute if score $game mobrace matches 3 run title @a subtitle {"text":"Who can kill the most skeletons tonight?","color":"gray"}
 execute if score $game mobrace matches 3 run title @a title {"text":"Bones!","color":"aqua"}
 
-scoreboard objectives setdisplay sidebar score
-schedule function mobrace:stop 540s
+# Setup game 4 - Creeper
+execute if score $game mobrace matches 4 run scoreboard players reset * creeper
+execute if score $game mobrace matches 4 run scoreboard objectives modify score displayname {"text":"Boom","color":"aqua","bold": true}
+execute if score $game mobrace matches 4 run title @a subtitle {"text":"Who can kill the most creepers tonight?","color":"gray"}
+execute if score $game mobrace matches 4 run title @a title {"text":"Boom!","color":"aqua"}

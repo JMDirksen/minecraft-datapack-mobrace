@@ -22,3 +22,6 @@ scoreboard objectives add cave_spider minecraft.killed:cave_spider
 scoreboard objectives add skeleton minecraft.killed:skeleton
 scoreboard objectives add skeleton_horse minecraft.killed:skeleton_horse
 scoreboard objectives add wither_skeleton minecraft.killed:wither_skeleton
+
+# Game 4 - Creepers
+scoreboard objectives add creeper minecraft.killed:creeper
