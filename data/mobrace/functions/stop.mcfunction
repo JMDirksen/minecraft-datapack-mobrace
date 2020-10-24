@@ -19,6 +19,8 @@ schedule function mobrace:hidesidebar 30s
 title @a times 20 100 20
 execute as @a at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 1 .5
 execute as @a at @s run playsound minecraft:block.conduit.ambient master @s ~ ~ ~ 1 .5
-execute if score $highscore mobrace matches 1.. run title @a subtitle ["",{"selector":"@a[scores={winner=1}]"},{"text":" has won this round!"}]
+execute if score $highscore mobrace matches 1.. run title @a subtitle ["",{"selector":"@a[scores={winner=1}]","color":"yellow"},{"text":" has won this round!"}]
+execute if score $highscore mobrace matches 1.. run tellraw @a ["",{"text":"The race has ended ","color":"aqua"},{"selector":"@a[scores={winner=1}]","color":"yellow"},{"text":" has won this round!"}]
 execute if score $highscore mobrace matches 0 run title @a subtitle {"text":"No winner this round"}
+execute if score $highscore mobrace matches 0 run tellraw @a ["",{"text":"The race has ended ","color":"aqua"},{"text":"No winner this round"}]
 title @a title {"text":"The race has ended","color":"aqua"}
