@@ -11,7 +11,6 @@ title @a times 20 100 20
 execute as @a at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 1 .5
 execute as @a at @s run playsound minecraft:block.conduit.ambient master @s ~ ~ ~ 1 .5
 scoreboard objectives setdisplay sidebar score
-schedule function mobrace:stop 540s
 scoreboard players set $highscore mobrace 0
 
 # Setup game 1 - Zombies

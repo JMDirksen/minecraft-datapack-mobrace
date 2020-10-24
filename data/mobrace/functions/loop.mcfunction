@@ -13,3 +13,6 @@ execute if score $playercount mobrace matches 2.. if score $daytime mobrace matc
 
 # Update scores
 function mobrace:updatescores
+
+# Stop game when day
+execute if score $game mobrace matches 1.. if score $daytime mobrace matches 0..12540 run function mobrace:stop
